@@ -3,7 +3,7 @@ Summary:	OCaml bindings for the libssl
 Summary(pl.UTF-8):	Wiązania OpenSSL dla OCamla
 Name:		ocaml-ssl
 Version:	0.4.2
-Release:	1
+Release:	2
 License:	LGPL + OCaml linking exception
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/savonet/%{name}-%{version}.tar.gz
