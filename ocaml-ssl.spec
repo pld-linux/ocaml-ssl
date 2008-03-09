@@ -1,6 +1,6 @@
 %define		ocaml_ver	1:3.10.0
 Summary:	OCaml bindings for the libssl
-Summary(pl.UTF-8):	Wiązania OpenSSL dla OCamla
+Summary(pl.UTF-8):	Wiązania OpenSSL do OCamla
 Name:		ocaml-ssl
 Version:	0.4.2
 Release:	2
@@ -18,14 +18,20 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 OCaml bindings for the libssl.
 
+%description -l pl.UTF-8
+Wiązania OpenSSL do OCamla.
+
 %package devel
 Summary:	OCaml bindings for the libssl
-Summary(pl.UTF-8):	Wiązania OpenSSL dla OCamla
+Summary(pl.UTF-8):	Wiązania OpenSSL do OCamla
 Group:		Development/Libraries
 %requires_eq	ocaml
 
 %description devel
 OCaml bindings for the libssl.
+
+%description devel -l pl.UTF-8
+Wiązania OpenSSL do OCamla.
 
 %prep
 %setup -q
