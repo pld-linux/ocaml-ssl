@@ -12,6 +12,7 @@ URL:		http://savonet.sourceforge.net/wiki/wikka.php?wakka=OCamlLibs
 BuildRequires:	ocaml >= %{ocaml_ver}
 BuildRequires:	ocaml-findlib
 BuildRequires:	openssl-devel
+BuildRequires:	which
 %requires_eq	ocaml-runtime
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
