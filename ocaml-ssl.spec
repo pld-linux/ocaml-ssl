@@ -8,6 +8,12 @@ License:	LGPL + OCaml linking exception
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/savonet/%{name}-%{version}.tar.gz
 # Source0-md5:	404f71d33885c985a8ff579996a5cda8
+Patch0:		0001-Stalkd-example.patch
+Patch1:		0002-Remove-duplicate-declaration-of-write.patch
+Patch2:		0003-Bump-version-number.patch
+Patch3:		0004-Remove-ansi-flag.patch
+Patch4:		0005-Use-accessor-functions-for-X509_STORE_CTX.patch
+Patch5:		0006-Change-CLIBS-order-to-allow-static-linking.patch
 URL:		http://savonet.sourceforge.net/
 BuildRequires:	ocaml >= %{ocaml_ver}
 BuildRequires:	ocaml-findlib
@@ -36,6 +42,12 @@ Wiązania OpenSSL do OCamla.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
 
 %build
 %configure
@@ -61,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES COPYING README
+%doc CHANGES COPYING README.md
 %dir %{_libdir}/ocaml/ssl
 %attr(755,root,root) %{_libdir}/ocaml/stublibs/*.so
 
