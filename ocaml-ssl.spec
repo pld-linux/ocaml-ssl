@@ -1,3 +1,4 @@
+# TODO: tests (BR: ocaml-alcotest)
 #
 # Conditional build:
 %bcond_without	ocaml_opt	# native optimized binaries (bytecode is always built)
@@ -9,13 +10,13 @@
 Summary:	OCaml bindings for the libssl
 Summary(pl.UTF-8):	Wiązania OpenSSL do OCamla
 Name:		ocaml-ssl
-Version:	0.5.10
-Release:	3
+Version:	0.5.13
+Release:	1
 License:	LGPL v2.1 + OCaml linking exception
 Group:		Libraries
 #Source0Download: https://github.com/savonet/ocaml-ssl/releases
-Source0:	https://github.com/savonet/ocaml-ssl/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	afebbdc3130c1addf1da31e3b92c1dcd
+Source0:	https://github.com/savonet/ocaml-ssl/archive/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	7a19910cc6cf9ed22f29210e52905041
 URL:		https://github.com/savonet/ocaml-ssl
 BuildRequires:	ocaml >= 1:4.02.0
 BuildRequires:	ocaml-dune >= 2.0.0
@@ -45,12 +46,13 @@ Wiązania OpenSSL do OCamla - część programistyczna.
 %prep
 %setup -q
 
+%{__rm} -r tests
+
 %build
 dune build --verbose
 
 %install
 rm -rf $RPM_BUILD_ROOT
-#install -d $RPM_BUILD_ROOT%{_libdir}/ocaml/{ssl,stublibs}
 
 dune install --destdir $RPM_BUILD_ROOT
 
